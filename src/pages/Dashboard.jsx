@@ -2,6 +2,7 @@ import React from 'react'
 import  { useContext, useState } from 'react';
 import { motion } from 'framer-motion';
 import MyContext from '../context/UserContext'
+import defaultProfile from '../assets/profile-BEbI9wIZ.png'
 import {IoIosCamera} from 'react-icons/io'
 const Dashboard = () => {
     const {userData} = useContext(MyContext)
@@ -22,7 +23,7 @@ const Dashboard = () => {
         <p className='bg-white w-full py-3.5 px-5 font-medium rounded-t-2xl'>Account Settings</p>
         <div className='flex gap-3 px-5'>
             <div className='relative'>
-                <img className='w-[70px] h-[70px] rounded-full object-cover object-top'  src={image} alt="" />
+                <img className='w-[70px] h-[70px] rounded-full object-cover object-top'  src={image || defaultProfile} alt="Profile" />
                 <label htmlFor="file-upload" className="absolute right-0 top-10 cursor-pointer">
                     <IoIosCamera style={{ background: '#6c25ff', padding: '3px', borderRadius: '50%' }} size={20} color='white' />
                 </label>
